@@ -17,11 +17,17 @@ import (
 
 type Config struct {
 	Connection struct {
-		Url      string
-		Auth     bool
-		Username string
-		Password string
+		Url            string
+		Auth           bool
+		Username       string
+		Password       string
+		UpdateInterval int
 	}
+}
+
+type WebSocketEvent struct {
+	Event string      `json:"event"`
+	Data  interface{} `json:"data"`
 }
 
 func getData(cfg Config) ccrad.Projects {
@@ -59,7 +65,8 @@ func Check(ws *websocket.Conn) {
 		count := 1
 		for {
 			query := getData(cfg)
-			b, err := json.Marshal(query)
+			event := WebSocketEvent{Event: "UPDATE", Data: query}
+			b, err := json.Marshal(event)
 			msg := fmt.Sprintf("message:  %v", string(b))
 			fmt.Println("Sending to client: " + msg)
 			if err = websocket.Message.Send(ws, string(b)); err != nil {
@@ -68,7 +75,7 @@ func Check(ws *websocket.Conn) {
 			}
 
 			count += 1
-			time.Sleep(time.Duration(10) * time.Second)
+			time.Sleep(time.Duration(cfg.Connection.UpdateInterval) * time.Second)
 		}
 
 	}

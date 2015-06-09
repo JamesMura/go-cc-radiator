@@ -1,0 +1,21 @@
+{
+  "name": "go-cc-radiator",
+  "version": "0.0.0",
+  "homepage": "https://github.com/JamesMura/go-cc-radiator",
+  "authors": [
+    "James Muranga <jmured@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.4.0",
+    "ng-websocket": "~0.2.1",
+    "foundation": "~5.5.2"
+  }
+}

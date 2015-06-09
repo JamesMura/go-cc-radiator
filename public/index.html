@@ -1,5 +1,25 @@
 <html>
-<head></head>
-<body>
+  <head>
+    <script type="text/javascript" src="/vendor/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/ng-websocket/ng-websocket.js"></script>
     <script type="text/javascript" src="/app.js"></script>
-</html>
+    <link rel="stylesheet" href="/vendor/foundation/css/foundation.min.css">
+    <link rel="stylesheet" href="/app.css">
+    <script src="/vendor/modernizr/modernizr.js"></script>
+  </head>
+  <body ng-app="radiator">
+    <div ng-controller="MainController">
+      <ul class="small-block-grid-5">
+        <li ng-repeat="item in data.items" class="step {{item.activity}}">
+        <div class="buildNumber">#{{item.lastBuildLabel}}</div>
+        <a href="{{item.webUrl}}">{{item.name}} </a>
+        </li>
+      </ul>
+    </div>
+    
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/foundation/js/foundation.min.js"></script>
+    <script>
+    $(document).foundation();
+    </script>
+  </html>

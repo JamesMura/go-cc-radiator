@@ -3,3 +3,4 @@ url = http://full.url.com/cctray.xml
 auth = true
 username = username
 password = password
+updateInterval = 10

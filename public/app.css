@@ -1,0 +1,31 @@
+body {
+	background-color: black;
+}
+.step {
+	background-color: #43AC6A;
+	color: #FFFFFF;
+	margin: 0.3%;
+	width: 18%;
+	font-size: 23px;
+	height: 75px;
+}
+
+a, a:focus, a:hover {
+  color: #FFFFFF;
+}
+
+div.buildNumber {
+	font-size: 14px;
+	font-weight: bold;
+	color: #c0392b;
+
+}
+.step.Sleeping {
+
+}
+.step.Building {
+	background-color: #f08a24;
+}
+.step.Failure {
+	background-color: #f04124;
+}
