@@ -43,7 +43,7 @@ func getData(cfg Config) ccrad.Projects {
 func Check(ws *websocket.Conn) {
 	var err error
 	var cfg Config
-	err = gcfg.ReadFileInto(&cfg, "config.ini")
+	err = gcfg.ReadFileInto(&cfg, "conf/app.ini")
 	if err != nil {
 		log.Fatal("Config:", err)
 		return
