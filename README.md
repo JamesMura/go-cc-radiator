@@ -16,10 +16,10 @@ Build Status Radiator compatible with cctray xml
 
 ## RUN USING DOCKER
 
-docker pull jamesmura/cctray-radiator
+	docker pull jamesmura/cctray-radiator
 
-mkdir /var/cctray
+	mkdir /var/cctray
 
-* create a config file /var/cctray/app.ini to match [this example configuration](conf/app.ini.sample)
+create a config file /var/cctray/app.ini to match [this example configuration](conf/app.ini.sample)
 
-docker run --name=cctray-radiator -d -p 8080:8080 -v /var/cctray:/go/src/app/conf jamesmura/cctray-radiator
+	docker run --name=cctray-radiator -d -p 8080:8080 -v /var/cctray:/go/src/app/conf jamesmura/cctray-radiator
