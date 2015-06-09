@@ -1,21 +1,4 @@
 'use strict';
-// var sock = null;
-// window.onload = function() {
-//   console.log("onload");
-//   sock = new WebSocket(wsuri);
-//   sock.onopen = function() {
-//     console.log("connected to " + wsuri);
-//     sock.send("START")
-//   }
-//   sock.onclose = function(e) {
-//     console.log("connection closed (" + e.code + ")");
-//   }
-//   sock.onmessage = function(e) {
-//     console.log("message received: " + e.data);
-//   }
-
-// };
-
 var app = angular.module('radiator', ['ngWebsocket']);
 app.service('RadiatorService', [
 
@@ -45,10 +28,9 @@ app.controller('MainController', ['RadiatorService', '$websocket', '$scope',
       ws.$emit('START');
     })
       .$on('$close', function() {
-        console.log('Got close, damn you silly wifi!');
+        console.log('Got close, damn you silly connection!');
       })
       .$on('UPDATE', function(data) {
-        console.log('got an update', data);
         $scope.data = data;
         $scope.$apply();
       })

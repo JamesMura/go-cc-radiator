@@ -11,3 +11,15 @@ Build Status Radiator compatible with cctray xml
 
 
 [![wercker status](https://app.wercker.com/status/99137d90dfa982512fb3f103407f760e/s "wercker status")](https://app.wercker.com/project/bykey/99137d90dfa982512fb3f103407f760e)
+
+
+
+## RUN USING DOCKER
+
+docker pull jamesmura/cctray-radiator
+
+mkdir /var/cctray
+
+* create a config file /var/cctray/app.ini to match [this example configuration](conf/app.ini.sample)
+
+docker run --name=cctray-radiator -d -p 8080:8080 -v /var/cctray:/go/src/app/conf jamesmura/cctray-radiator
